@@ -155,12 +155,17 @@ main {
 
 .dates {
   display: flex;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
+  gap: 1rem;
   margin-bottom: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .dates label {
   color: #ccc;
+  margin-right: 0.5rem;
+ /*justify-content: space-between;*/
 }
 
 .dates input[type="date"] {
@@ -169,6 +174,7 @@ main {
   border: 1px solid #555;
   padding: 0.5rem;
   border-radius: 5px;
+  width: calc(50% - 0.5rem);
 }
 
 .priority,
