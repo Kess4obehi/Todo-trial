@@ -1,0 +1,254 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: sans-serif;
+}
+
+button {
+  appearance: none;
+  background: none;
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+}
+
+body {
+  background-color: #242948;
+  color: #fff;
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+}
+
+.app {
+  width: 100%;
+  max-width: 768px;
+}
+
+.app header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.app header h1 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.app header button
+.app header select {
+  color: #fff;
+  font-size: 18px;
+  border-bottom: 2px solid #fff;
+  text-transform: uppercase;
+  margin-right: 1rem;
+  text-transform: uppercase;
+}
+.app header button#create {
+  text-transform: uppercase;
+  font-size: 18px;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  margin-right: 7px;
+}
+
+.app header button#toggle-dark-mode {
+  font-weight: bold;
+}
+
+.app header select {
+  border: none;
+  background-color: transparent;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  background-color: #1e223d;
+  box-shadow: 0 0 4px rgb(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  flex-direction: column;
+}
+
+@media (max-width: 600px) {
+  .item {
+    padding: 1rem; /* Reduce padding on smaller screens */
+  }
+
+  .app header h1 {
+    font-size: 20px; /* Smaller font size */
+  }
+  
+  .item input[type="text"],
+  .priority,
+  .category,
+  .notes,
+  .reminder {
+    font-size: 18px; /* Slightly smaller input text */
+  }
+}
+
+
+.item:last-of-type {
+  margin-bottom: 0;
+}
+
+.item input[type="checkbox"] {
+  margin-right: 1rem;
+}
+
+.item input[type="text"] {
+  appearance: none;
+  background: none;
+  border: none;
+  outline: none;
+  font-weight: 400;
+  color: #fff;
+  font-size: 20px;
+  margin-right: 1rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.item input[type="text"]:not(:disabled) {
+  border-bottom: 2px solid #fff;
+}
+
+.item.complete {
+  opacity: 0.7;
+}
+
+.item.complete input[type="text"] {
+  text-decoration: line-through;
+}
+
+.item:hover,
+.item:focus-within {
+  outline: 2px solid #fff;
+}
+
+/* Styling for toggling details */
+
+.details {
+  display: none;
+  margin-top: 1rem;
+}
+
+.details.show {
+  display: block;
+}
+
+.dates {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.dates label {
+  color: #ccc;
+}
+
+.dates input[type="date"] {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.priority,
+.category {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.notes {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 1rem;
+  resize: none;
+}
+
+.reminder {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 0.5rem;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.actions button {
+  color: #ccc;
+  margin-right: 1rem;
+  opacity: 0.8;
+  transform: 0.1s;
+}
+
+.actions button.remove-btn {
+  color: crimson;
+}
+
+.actions button:hover {
+  opacity: 1;
+}
+
+.actions button:last-of-type {
+  margin-right: 0;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.app header.daer-mode h1 {
+  color: #e0e0e0;
+}
+
+button.dark-mode,
+select.dark-mode {
+  background-color: #444;
+  border-color: #555;
+}
+
+.details input.dark-mode,
+.details textarea.dark-mode,
+.details select.dark-mode {
+  background-color: #555;
+  color: #e0e0e0;
+  border-color: #666;
+}
